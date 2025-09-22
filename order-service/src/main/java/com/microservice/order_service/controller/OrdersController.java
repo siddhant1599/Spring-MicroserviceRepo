@@ -19,8 +19,9 @@ public class OrdersController {
     private final OrdersService ordersService;
 
     @GetMapping("/testEndpointOrderService")
-    public String testEndpointOrderService(){
-        return "Hello from the order Service";
+    public String testEndpointOrderService(@RequestHeader("X-User-Id") Long userId){
+
+        return "Hello from the order Service, user id is -" + userId;
     }
 
     @GetMapping
